@@ -5,21 +5,19 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "price_lookup"
 version = "0.1.0"
-description = "Price Lookup Custom App"
-authors = [
-    { name = "Your Name", email = "your.email@example.com" },
-]
+description = "Get Item Last Price History & Margin"
+authors = [{ name = "Jagdeep Virdi" }]
 license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.10"
-
 dependencies = []
 
-[tool.setuptools]
-packages = ["price_lookup"]
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["price_lookup*"]
 
 [tool.setuptools.package-data]
-price_lookup = ["**/*.txt", "**/*.html", "**/*.js", "**/*.css"]
+price_lookup = ["**/*.txt", "**/*.html", "**/*.js", "**/*.css", "**/*.json"]
 
 [tool.bench.frappe-dependencies]
 frappe = ">=16.0.0"
